@@ -1,5 +1,5 @@
 {
-  "baseBranch": "origin/main",
+  "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
       "dependsOn": [
@@ -15,9 +15,8 @@
     },
     "start": {
       "cache": false,
-      "dependsOn": [
-        "^start"
-      ]
+      "dependsOn": ["^build"],
+      "persistent": true
     }
   }
 }

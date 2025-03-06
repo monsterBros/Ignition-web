@@ -25,7 +25,7 @@ export const DocumentNodes = () => {
 
   useAsyncEffect(async () => {
     const cjsCode = await sucraseTransformCode(jsMoudleCode)
-    const { exports  } = compileModuleResolve(cjsCode);
+    const { exports } = compileModuleResolve(cjsCode);
     (window as any)[ScopeMoudleId] = {
       jsMoudle: exports
     }
@@ -50,6 +50,7 @@ export const DocumentNodes = () => {
         >
           <Element canvas is={__Box__}>
             <__ArcoButton__ />
+
           </Element>
           <__ArcoProTable__ />
         </Canvas>

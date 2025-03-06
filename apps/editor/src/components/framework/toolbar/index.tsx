@@ -66,11 +66,11 @@ export function ToolBox(): JSX.Element {
         <Button onClick={handlePreviewEvt}>
           <Space size={2}>
             <CaretRightOutlined />
-            预览
+            预览1
           </Space>
         </Button>
         <Button type="primary" icon={<ThunderboltFilled />}>
-          发布
+          发布2
         </Button>
       </Space>
     </Space>

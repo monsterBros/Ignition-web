@@ -44,9 +44,12 @@ export const MountEvents = () => {
   });
 
   const handleBindEventChange = (_: any, allValues: any) => {
-    console.log(allValues, _, 'allValues')
-    
+    console.log(allValues, 'allValues')
+    console.log(_, '_, ')
+
+    console.log(nodeId, 'nodeId')
     actions.setProp(nodeId, (setterProps) => {
+      console.log(setterProps, 'setterProps')
       setterProps.__events = allValues.events
     })
   }
@@ -121,7 +124,7 @@ export const MountEvents = () => {
         <ProFormItem style={{ padding: 0 }}
           name="propName"
           label="绑定事件"
-           >
+        >
           <AutoComplete options={defaultOptions} />
         </ProFormItem>
       </ProFormList>

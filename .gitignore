@@ -1,6 +1,6 @@
 # node package download
 **/node_modules
-
+.history
 # macos
 .DS_Store
 

@@ -26,6 +26,7 @@ export const DocumentNodes: React.FC<React.ComponentProps<typeof DocumentFrame>>
         height: '100vh',
       }}
     >
+			{/** 创建一个物料组件  -> 物料组件的左侧面板渲染 ->  拖拽到画布渲染 */}
       <DocumentFrame {...props} >
         <Canvas
           canvas

@@ -43,7 +43,14 @@ export const MaterialGroup: React.FC<MaterialGroupProps> = (props) => {
         )}
       </Flex>
       <div className={classes.group}>
+				{
+					/**
+					 * value:对象的value，也就是Module=MaterialComponent
+						key:对象的key
+					 */
+				}
         {_.map(props.groupList, (value, key: string) => {
+					console.log('value', value)
           const displayName = value.craft?.displayName;
           const { icon } = value.craft.related || {};
           const { useCanvas = false } = value.craft?.custom || {};
@@ -51,10 +58,12 @@ export const MaterialGroup: React.FC<MaterialGroupProps> = (props) => {
             <MaterialRecord
               key={key}
               ref={(ref: HTMLDivElement) => {
+								// 给组件卡片支持拖拽的功能
                 if (ref) {
                   connectors.create(
                     ref,
                     useCanvas ? (
+											// Canvas = <Element canvas is={value} />
                       <Canvas canvas is={value} />
                     ) : (
                       React.createElement(value)

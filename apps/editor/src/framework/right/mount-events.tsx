@@ -44,13 +44,10 @@ export const MountEvents = () => {
   });
 
   const handleBindEventChange = (_: any, allValues: any) => {
-    console.log(allValues, 'allValues')
-    console.log(_, '_, ')
 
-    console.log(nodeId, 'nodeId')
     actions.setProp(nodeId, (setterProps) => {
-      console.log(setterProps, 'setterProps')
       setterProps.__events = allValues.events
+			console.log('更新全局props 的event:', setterProps.__events)
     })
   }
 

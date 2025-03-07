@@ -33,6 +33,7 @@ const withConnectNode = (
   WrappedComponent: React.ForwardRefExoticComponent<React.RefAttributes<any>>,
 ): ReactMaterialComponent => {
   return function ({ children, __events = [], ...props }: Record<string, any>) {
+		console.log('__events', __events)
     const {
       connectors: { connect, drag },
       id,
@@ -49,8 +50,11 @@ const withConnectNode = (
           eventMap[item.propName] = (window as any)?.[ScopeMoudleId]["jsMoudle"]?.[item.eventName]
         }
       })
+			console.log('eventMap', eventMap)
       return eventMap
     }, [__events])
+
+		console.log('eventProps', eventProps)
 
     return (
       <ErrorBoundary fallbackRender={fallbackRender} >
@@ -60,6 +64,7 @@ const withConnectNode = (
           } else {
             connect(drag(dom))
           }
+					{eventProps}
         }} {...memoizdProps} {...eventProps} >{children}</WrappedComponent>
       </ErrorBoundary>
     );
